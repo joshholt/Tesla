@@ -11,5 +11,8 @@ figure it out from there... stay tuned
 ##Frameworks
 <hr/>
 
-1. [Ki Statechart][https://github.com/FrozenCanuck/Ki]
-2. [Mata][https://github.com/FrozenCanuck/Mata]
+1. [Ki Statechart][ki]
+2. [Mata][mata]
+
+[ki]: https://github.com/FrozenCanuck/Ki
+[mata]: [https://github.com/FrozenCanuck/Mata
