@@ -1,3 +1,6 @@
 [submodule "frameworks/ki"]
 	path = frameworks/ki
 	url = https://github.com/FrozenCanuck/Ki.git
+[submodule "frameworks/mata"]
+	path = frameworks/mata
+	url = https://github.com/FrozenCanuck/Mata.git
