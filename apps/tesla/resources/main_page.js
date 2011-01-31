@@ -4,21 +4,51 @@
 // ==========================================================================
 /*globals Tesla */
 
-// This page describes the main user interface for your application.  
 Tesla.mainPage = SC.Page.design({
 
-  // The main pane is made visible on screen as soon as your app is loaded.
-  // Add childViews to this pane for views to display immediately on page 
-  // load.
   mainPane: SC.MainPane.design({
-    childViews: 'labelView'.w(),
+    defaultResponder: 'Tesla',
+    childViews: ['scenes'],
     
-    labelView: SC.LabelView.design({
-      layout: { centerX: 0, centerY: 0, width: 200, height: 18 },
-      textAlign: SC.ALIGN_CENTER,
-      tagName: "h1", 
-      value: "Welcome to SproutCore!"
+    scenes: SC.SceneView.design({
+      layout: { top: 0, right: 0, bottom: 0, left: 0 },
+      scenes: 'articleList currentArticle'.w(),
+      nowShowing: 'articleList',
+      transitionDuration: 200
     })
+  }),
+  
+  articleList: SC.ScrollView.design({
+    layout: { top: 0, right: 0, bottom: 0, left: 0 },
+    contentView: Tesla.ArticleList.design({
+      contentBinding: 'Tesla.articlesController.arrangedObjects',
+      selectionBinding: 'Tesla.articlesController.selection',
+      contentValueKey: 'title',
+      action: 'showArticle',
+      actOnSelect: YES
+    })
+  }),
+  
+  currentArticle: SC.View.design({
+    childViews: 'toolbar article'.w(),
+    
+    toolbar: SC.ToolbarView.design({
+      childViews: ['back'],
+      
+      back: SC.ButtonView.design({
+        layout: { centerX: 0, left: 10, height: 24, width: 100 },
+        title: "Back".loc(),
+        action: 'closeArticle'
+      })
+    }),
+    
+    article: SC.ScrollView.design({
+      layout: { top: 32, right: 0, bottom: 0, left: 0 },
+      contentView: Tesla.ArticleView.extend({
+        contentBinding: 'Tesla.articleController'
+      })
+    })
+    
   })
 
 });
