@@ -1,2 +1,5 @@
 tmp/
-
+.bundle/
+.sass-cache/
+Gemfile.lock
+bin/

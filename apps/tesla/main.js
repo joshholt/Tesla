@@ -7,7 +7,7 @@
 Tesla.main = function main() {
   Tesla.initStatechart();
   Tesla.getPath('mainPage.mainPane').append();
-  SC.RootResponder.responder.set('defaultResponder', Tesla);
+  // SC.RootResponder.responder.set('defaultResponder', Tesla);
   var articles = Tesla.store.find(Tesla.Article);
   Tesla.articlesController.set('content',articles);
 };

@@ -4,4 +4,4 @@
 # ===========================================================================
 
 # Add initial buildfile information here
-config :all, :required => [:sproutcore, :ki, :mata]
+config :all, :required => [:sproutcore, :ki, :mata], :theme => 'sproutcore/ace'

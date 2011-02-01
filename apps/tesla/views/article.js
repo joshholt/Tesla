@@ -16,14 +16,13 @@ Tesla.ArticleView = SC.View.extend(SC.ContentDisplay,
   useStaticLayout: YES,
   
   render: function(ctx, ft) {
-    var content = this.get('content'), self = this;
+    var content = this.get('content');
     
     if (content) {
-      self.renderHeader(ctx, content.get('title'));
-      self.renderArticleContent(ctx, content.get('body'));
-      self.renderAuthorBlock(ctx, content.getPath('author.fullName'));
-      self.renderFooter(ctx, content.get('createdAt'));
-      SC.Logger.log("RENDERING: Article... %@".fmt(content.get('title')));
+      this.renderHeader(ctx, content.get('title'));
+      this.renderArticleContent(ctx, content.get('body'));
+      this.renderAuthorBlock(ctx, content.getPath('author.fullName'));
+      this.renderFooter(ctx, content.get('createdAt'));
     }
   },
   

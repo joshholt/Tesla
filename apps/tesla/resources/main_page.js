@@ -13,7 +13,7 @@ Tesla.mainPage = SC.Page.design({
     scenes: SC.SceneView.design({
       layout: { top: 0, right: 0, bottom: 0, left: 0 },
       scenes: 'articleList currentArticle'.w(),
-      nowShowing: 'articleList',
+      nowShowing: 'currentArticle',
       transitionDuration: 200
     })
   }),
@@ -42,11 +42,8 @@ Tesla.mainPage = SC.Page.design({
       })
     }),
     
-    article: SC.ScrollView.design({
-      layout: { top: 32, right: 0, bottom: 0, left: 0 },
-      contentView: Tesla.ArticleView.extend({
-        contentBinding: 'Tesla.articleController'
-      })
+    article: Tesla.ArticleView.extend({
+      contentBinding: 'Tesla.articleController'
     })
     
   })
